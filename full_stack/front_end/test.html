@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box-px{
+            width: 300px;
+            height: 100px;
+            background-color: blueviolet;
+            margin-bottom: 50px;
+        }
+        .box-rem{
+            width: 5rem;
+            height: 3rem;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-px"></div>
+    <div class="box-rem"></div>
+    <script>
+        // 根据设备的宽度计算 html 标签的 font-size 的属性值（eg：设备宽度/10）
+        function resetHtmlFontSize(){
+            // 用dom节点获取html根节点的font-size属性值
+            document.documentElement.style.fontSize = screen.width / 10 + 'px';
+        }
+        // 绑定事件
+        window.onresize = resetHtmlFontSize;    // onresize：用于监听元素（最常用的是浏览器窗口 window）的大小改变事件
+    </script>
+</body>
+</html>
